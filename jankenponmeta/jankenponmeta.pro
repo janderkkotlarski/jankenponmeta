@@ -31,4 +31,14 @@ LIBS += -lraylib -Iexternal -lopengl32 -lgdi32 -lwinmm
 LIBS += -static -lpthread
 
 SOURCES += \
-        main.cpp
+        fibran.cpp \
+        graphics.cpp \
+        jankenpon.cpp \
+        main.cpp \
+        player.cpp
+
+HEADERS += \
+  fibran.h \
+  graphics.h \
+  jankenpon.h \
+  player.h
