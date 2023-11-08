@@ -146,7 +146,8 @@ release/jankenpon.o: ../jankenponmeta/jankenpon.cpp ../jankenponmeta/jankenpon.h
 
 release/main.o: ../jankenponmeta/main.cpp ../jankenponmeta/graphics.h \
 		../jankenponmeta/jankenpon.h \
-		../jankenponmeta/fibran.h
+		../jankenponmeta/fibran.h \
+		../jankenponmeta/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\jankenponmeta\main.cpp
 
 release/player.o: ../jankenponmeta/player.cpp ../jankenponmeta/player.h \

@@ -146,7 +146,8 @@ debug/jankenpon.o: ../jankenponmeta/jankenpon.cpp ../jankenponmeta/jankenpon.h \
 
 debug/main.o: ../jankenponmeta/main.cpp ../jankenponmeta/graphics.h \
 		../jankenponmeta/jankenpon.h \
-		../jankenponmeta/fibran.h
+		../jankenponmeta/fibran.h \
+		../jankenponmeta/player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\jankenponmeta\main.cpp
 
 debug/player.o: ../jankenponmeta/player.cpp ../jankenponmeta/player.h \

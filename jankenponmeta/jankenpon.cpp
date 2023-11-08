@@ -3,8 +3,47 @@
 #include <iostream>
 #include <vector>
 
-int compare_signs(const sign5 sign_a, const sign5 sign_b) {
-  if (sign_a == sign_b) {
+int compare_sign3(const sign3 sign_a, const sign3 sign_b) {
+  if (sign_a == sign_b && sign_a != sign3::none) {
+    return 0;
+  }
+
+  if ((sign_a == sign3::rock && sign_b == sign3::scissors) ||
+      (sign_a == sign3::paper && sign_b == sign3::rock) ||
+      (sign_a == sign3::scissors && sign_b == sign3::paper)) {
+    return 1;
+  }
+
+  if ((sign_a == sign3::rock && sign_b == sign3::paper) ||
+      (sign_a == sign3::paper && sign_b == sign3::scissors) ||
+      (sign_a == sign3::scissors && sign_b == sign3::rock)) {
+    return -1;
+  }
+
+  return -1000;
+}
+
+void display_sign3(const sign3 &sign) {
+  switch (sign) {
+    case sign3::none:
+      std::cout << "none" << std::endl;
+      break;
+    case sign3::rock:
+      std::cout << "rock" << std::endl;
+      break;
+    case sign3::paper:
+      std::cout << "paper" << std::endl;
+      break;
+    case sign3::scissors:
+      std::cout << "scissors" << std::endl;
+      break;
+    default:
+      std::cout << "void" << std::endl;
+  }
+}
+
+int compare_sign5(const sign5 sign_a, const sign5 sign_b) {
+  if (sign_a == sign_b && sign_a != sign5::none) {
     return 0;
   }
 
@@ -19,7 +58,6 @@ int compare_signs(const sign5 sign_a, const sign5 sign_b) {
       (sign_a == sign5::spock && sign_b == sign5::scissors)||
       (sign_a == sign5::spock && sign_b == sign5::rock)) {
     return 1;
-
   }
 
   if ((sign_a == sign5::rock && sign_b == sign5::paper) ||
@@ -35,7 +73,7 @@ int compare_signs(const sign5 sign_a, const sign5 sign_b) {
     return -1;
   }
 
-  return 0;
+  return -1000;
 }
 
 void sign5_matrix() {
@@ -43,15 +81,20 @@ void sign5_matrix() {
 
   for (const sign5 sign_a: signs) {
     for (const sign5 sign_b: signs) {
-      std::cout << "[" << compare_signs(sign_a, sign_b) << "]";
+      std::cout << "[" << compare_sign5(sign_a, sign_b) << "]";
     }
 
     std::cout << std::endl;
   }
 }
 
-void display_sign(const sign5 &sign) {
+
+
+void display_sign5(const sign5 sign) {
   switch (sign) {
+    case sign5::none:
+      std::cout << "none" << std::endl;
+      break;
     case sign5::rock:
       std::cout << "rock" << std::endl;
       break;
@@ -72,7 +115,7 @@ void display_sign(const sign5 &sign) {
   }
 }
 
-sign5 number2sign(unsigned number) {
+sign5 number2sign5(unsigned number) {
   switch (number) {
     case 0:
       return sign5::rock;
@@ -90,13 +133,13 @@ sign5 number2sign(unsigned number) {
       return sign5::lizard;
       break;
     default:
-      return sign5::rock;
+      return sign5::none;
   }
 }
 
-sign5 random_sign(fibran &fibi) {
+sign5 random_sign5(fibran &fibi) {
   const unsigned number = fibi.get_val() % 5;
 
-  return number2sign(number);
+  return number2sign5(number);
 }
 

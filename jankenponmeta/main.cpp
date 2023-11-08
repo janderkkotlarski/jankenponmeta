@@ -2,6 +2,8 @@
 #include "jankenpon.h"
 #include "player.h"
 
+#include <iostream>
+
 int main(void)
 {
   // graphics_2d();
@@ -24,15 +26,28 @@ int main(void)
     clowns.push_back(player(fibi));
   }
 
-  for (const player &joker: clowns) {
-    joker.show_sign();
-  }
+  show_player_scores(clowns);
 
-  round(clowns);
+  // round(clowns);
 
-  for (const player &joker: clowns) {
-    joker.show_sign();
-  }
+  tourney(clowns, rounds);
+
+  show_player_scores(clowns);
+
+  std::cout << std::endl;
+
+  std::vector <player> jesters;
+
+  /*
+  jesters.push_back(player(sign5::rock));
+  jesters.push_back(player(sign5::paper));
+
+  show_player_scores(jesters);
+
+  match(jesters[0], jesters[1]);
+
+  show_player_scores(jesters);
+  */
 
   return 0;
 }

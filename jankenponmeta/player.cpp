@@ -1,16 +1,23 @@
 #include "player.h"
 
+#include <iostream>
+
 player::player()
 {
 }
 
-player::player(fibran &fibi)
-  : m_sign(random_sign(fibi))
+player::player(const sign5 sign)
+  : m_sign5(sign)
 {
 }
 
-sign5 player::get_sign() {
-  return m_sign;
+player::player(fibran &fibi)
+  : m_sign5(random_sign5(fibi))
+{
+}
+
+sign5 player::get_sign5() {
+  return m_sign5;
 }
 
 int player::get_score() const {
@@ -21,8 +28,12 @@ int player::get_round() {
   return m_round;
 }
 
-void player::show_sign() const {
-  display_sign(m_sign);
+void player::show_sign5() const {
+  display_sign5(m_sign5);
+}
+
+void player::show_score() const {
+  std::cout << m_score << std::endl;
 }
 
 void player::add_score(const int result) {
@@ -30,10 +41,18 @@ void player::add_score(const int result) {
   ++m_round;
 }
 
+void show_player_scores(const std::vector <player> &players) {
+  for (const player &joker: players) {
+    joker.show_score();
+  }
+
+  std::cout << std::endl;
+}
+
 void match(player &player_a, player &player_b) {
-  if (player_a.get_round() > 1 && player_a.get_round() < 5 &&
+  if (player_a.get_round() > -1 && player_a.get_round() < 4 &&
       player_a.get_round() == player_b.get_round()) {
-    const int result_a { compare_signs(player_a.get_sign(), player_b.get_sign()) };
+    const int result_a { compare_sign5(player_a.get_sign5(), player_b.get_sign5()) };
 
     player_a.add_score(result_a);
     player_b.add_score(-result_a);
@@ -76,5 +95,10 @@ void round(std::vector <player> &clowns) {
       }
     }
   }
+}
 
+void tourney(std::vector <player> &clowns, const int rounds) {
+  for (int i { 0 }; i < rounds; ++i) {
+    round(clowns);
+  }
 }
