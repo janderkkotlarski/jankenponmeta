@@ -23,15 +23,18 @@ int main(void)
   }
 
   for (int i = 0; i < pod_size; ++i) {
-    clowns.push_back(player(fibi));
+    clowns.push_back(player(fibi, false));
   }
 
+  show_player_signs(clowns);
   show_player_scores(clowns);
 
   // round(clowns);
 
   tourney(clowns, rounds);
 
+
+  show_player_signs(clowns);
   show_player_scores(clowns);
 
   std::cout << std::endl;

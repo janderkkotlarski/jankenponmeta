@@ -7,17 +7,22 @@ player::player()
 }
 
 player::player(const sign5 sign)
-  : m_sign5(sign)
+  : m_sign(sign), m_five(true)
 {
 }
 
-player::player(fibran &fibi)
-  : m_sign5(random_sign5(fibi))
+player::player(fibran &fibi, const bool five)
 {
+  if (five) {
+    m_sign = random_sign5(fibi);
+  }
+  else {
+    m_sign = random_sign3(fibi);
+  }
 }
 
-sign5 player::get_sign5() {
-  return m_sign5;
+sign5 player::get_sign() {
+  return m_sign;
 }
 
 int player::get_score() const {
@@ -28,8 +33,8 @@ int player::get_round() {
   return m_round;
 }
 
-void player::show_sign5() const {
-  display_sign5(m_sign5);
+void player::show_sign() const {
+  display_sign(m_sign);
 }
 
 void player::show_score() const {
@@ -39,6 +44,14 @@ void player::show_score() const {
 void player::add_score(const int result) {
   m_score += result;
   ++m_round;
+}
+
+void show_player_signs(const std::vector <player> &players) {
+  for (const player &joker: players) {
+    joker.show_sign();
+  }
+
+  std::cout << std::endl;
 }
 
 void show_player_scores(const std::vector <player> &players) {
@@ -52,7 +65,7 @@ void show_player_scores(const std::vector <player> &players) {
 void match(player &player_a, player &player_b) {
   if (player_a.get_round() > -1 && player_a.get_round() < 4 &&
       player_a.get_round() == player_b.get_round()) {
-    const int result_a { compare_sign5(player_a.get_sign5(), player_b.get_sign5()) };
+    const int result_a { compare_sign5(player_a.get_sign(), player_b.get_sign()) };
 
     player_a.add_score(result_a);
     player_b.add_score(-result_a);
