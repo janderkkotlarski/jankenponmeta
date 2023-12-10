@@ -11,46 +11,39 @@ int main(void)
   // sign5_matrix();
 
   fibran fibi;
+  // fibi.show_fib();
 
-  std::vector <player> clowns;
+  const unsigned amount { 16 };
 
-  const int rounds{ 4 };
-
-  int pod_size{ 1 };
-
-  for (int i = 0; i < rounds; ++i) {
-    pod_size *= 2;
+  for (unsigned count { 0 }; count < amount; ++count) {
+    fibi.next_fib();
+    // fibi.show_fib();
   }
 
-  for (int i = 0; i < pod_size; ++i) {
-    clowns.push_back(player(fibi, false));
-  }
+  // fibi.display_mem();
+  // fibi.div_mem(5);
+  // fibi.display_div();
 
-  show_player_signs(clowns);
-  show_player_scores(clowns);
-
-  // round(clowns);
-
-  tourney(clowns, rounds);
+  const std::vector <unsigned> mem = fibi.get_memory();
 
 
-  show_player_signs(clowns);
-  show_player_scores(clowns);
 
-  std::cout << std::endl;
+  const unsigned vid{ 3 };
 
-  std::vector <player> jesters;
+  std::vector <unsigned> div;
 
-  /*
-  jesters.push_back(player(sign5::rock));
-  jesters.push_back(player(sign5::paper));
+  div = unrests(mem, vid);
 
-  show_player_scores(jesters);
+  // div.push_back(mem[0] % vid);
 
-  match(jesters[0], jesters[1]);
+  mem_show(div);
 
-  show_player_scores(jesters);
-  */
+  // div.push_back(mem[0] % vid);
+
+  // mem_show(div);
+
+  // std::cout << mem[0]; // << ':' << div;
+
 
   return 0;
 }
