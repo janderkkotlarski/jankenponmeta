@@ -18,7 +18,7 @@ void fibran::seed_fib() {
   m_fib[1] = chronumber(m_max / 3);
   m_fib[0] = add(m_fib[1], m_fib[2]);
 
-  m_memory.push_back(m_fib[0]);
+  // m_memory.push_back(m_fib[0]);
 }
 
 void fibran::next_fib() {
@@ -26,15 +26,27 @@ void fibran::next_fib() {
   m_fib[1] = m_fib[0];
   m_fib[0] = add(m_fib[1], m_fib[2]);
 
+  // m_memory.push_back(m_fib[0]);
+}
+
+void fibran::single_fib() {
+  next_fib();
+
+  m_memory.push_back(m_fib[0]);
+}
+
+void fibran::multi_fib(const unsigned amount) {
+  for (unsigned count { 0 }; count < amount; ++count) {
+    next_fib();
+  }
+
   m_memory.push_back(m_fib[0]);
 }
 
 void fibran::rand_fib() {
-  const unsigned amount { m_fib[0] % m_sub + m_sub / 3};
+  const unsigned amount { m_fib[0] % m_sub };
 
-  for (unsigned i{ 0 }; i < amount; ++i) {
-    next_fib();
-  }
+  multi_fib(amount);
 }
 
 unsigned fibran::get_rand() {

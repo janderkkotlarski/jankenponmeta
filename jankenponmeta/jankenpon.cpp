@@ -61,26 +61,35 @@ int compare_sign5(const sign5 sign_a, const sign5 sign_b) {
 void display_sign(const sign5 sign) {
   switch (sign) {
     case sign5::none:
-      std::cout << "none" << std::endl;
+      std::cout << "none";
       break;
     case sign5::rock:
-      std::cout << "rock" << std::endl;
+      std::cout << "rock";
       break;
     case sign5::paper:
-      std::cout << "paper" << std::endl;
+      std::cout << "paper";
       break;
     case sign5::scissors:
-      std::cout << "scissors" << std::endl;
+      std::cout << "scissors";
       break;
     case sign5::spock:
-      std::cout << "spock" << std::endl;
+      std::cout << "spock";
       break;
     case sign5::lizard:
-      std::cout << "lizard" << std::endl;
+      std::cout << "lizard";
       break;
     default:
-      std::cout << "void" << std::endl;
+      std::cout << "void";
   }
+}
+
+void display_signs(const std::vector <sign5> &signs) {
+  for (const sign5 sign: signs) {
+    display_sign(sign);
+    std::cout << " ";
+  }
+
+  std::cout << std::endl;
 }
 
 sign5 number2sign(unsigned number) {

@@ -16,7 +16,7 @@ int main(void)
   const unsigned amount { 16 };
 
   for (unsigned count { 0 }; count < amount; ++count) {
-    fibi.next_fib();
+    fibi.rand_fib();
     // fibi.show_fib();
   }
 
@@ -35,8 +35,17 @@ int main(void)
   div = unrests(mem, vid);
 
   // div.push_back(mem[0] % vid);
+  mem_show(mem);
 
   mem_show(div);
+
+  std::vector <sign5> signs;
+
+  for (const unsigned term: div) {
+    signs.push_back(number2sign(term));
+  }
+
+  display_signs(signs);
 
   // div.push_back(mem[0] % vid);
 

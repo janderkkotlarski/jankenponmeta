@@ -8,7 +8,7 @@ class fibran
 private:
   const unsigned m_max { 999999999 };
 
-  const unsigned m_sub { 333 };
+  const unsigned m_sub { 16 };
 
   std::vector <unsigned> m_fib{ 0, 0, 0 };
 
@@ -20,14 +20,20 @@ private:
 
   void seed_fib();
 
-
+  void next_fib();
 
 public:
   fibran();
 
-  void next_fib();
+
+
+  void single_fib();
+
+  void multi_fib(const unsigned amount);
 
   void rand_fib();
+
+
 
   unsigned get_rand();
 

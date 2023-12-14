@@ -14,6 +14,8 @@ sign5 number2sign(unsigned number);
 
 void display_sign(const sign5 sign);
 
+void display_signs(const std::vector <sign5> &signs);
+
 sign5 random_sign3(fibran &fibi);
 sign5 random_sign5(fibran &fibi);
 
