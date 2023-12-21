@@ -6,9 +6,9 @@
 class fibran
 {
 private:
-  const unsigned m_max { 999999999 };
+  const unsigned m_max { 999999991 };
 
-  const unsigned m_sub { 16 };
+  const unsigned m_sub { 31 };
 
   std::vector <unsigned> m_fib{ 0, 0, 0 };
 
@@ -56,6 +56,8 @@ unsigned special_add(const unsigned val1, const unsigned val2, const unsigned ma
 unsigned chronumber(const unsigned max);
 
 void mem_show(const std::vector <unsigned> &memory);
+
+void mem_show(const std::vector <unsigned> &memory, const unsigned length);
 
 std::vector <unsigned> unrests(const std::vector <unsigned> &memory, const unsigned div);
 

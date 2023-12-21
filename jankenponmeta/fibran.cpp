@@ -113,6 +113,24 @@ void mem_show(const std::vector <unsigned> &memory) {
   std::cout << std::endl;
 }
 
+void mem_show(const std::vector <unsigned> &memory, const unsigned length)
+{
+  unsigned count{ 0 };
+
+  for (const unsigned mem: memory) {
+   std::cout << "[" << mem << "]";
+   ++count;
+
+   if (count == length) {
+     std::cout << std::endl;
+     count = 0;
+   }
+  }
+
+  std::cout << std::endl;
+}
+
+
 std::vector <unsigned> unrests(const std::vector <unsigned> &memory, const unsigned div) {
   std::vector <unsigned> unsi;
 
