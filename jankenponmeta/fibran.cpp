@@ -43,6 +43,10 @@ void fibran::multi_fib(const unsigned amount) {
   m_memory.push_back(m_fib[0]);
 }
 
+void fibran::auto_fib() {
+  multi_fib(m_sub);
+}
+
 void fibran::rand_fib() {
   const unsigned amount { m_fib[0] % m_sub };
 

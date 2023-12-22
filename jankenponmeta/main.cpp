@@ -13,10 +13,10 @@ int main(void)
   fibran fibi;
   // fibi.show_fib();
 
-  const unsigned amount { 1000 };
+  const unsigned amount { 100000 };
 
   for (unsigned count { 0 }; count < amount; ++count) {
-    fibi.rand_fib();
+    fibi.auto_fib();
     // fibi.show_fib();
   }
 
@@ -28,7 +28,7 @@ int main(void)
 
   // mem_show(mem, 8);
 
-  const unsigned scope { 100 };
+  const unsigned scope { amount };
 
   for (unsigned index{ 1 }; index < mem.size(); ++index) {
     unsigned start { 0 };
@@ -43,7 +43,7 @@ int main(void)
 
 
       if (mem[start] == mem[index]) {
-        std::cout << index - start << std::endl;
+        std::cout << "[" << index << ":" << index - start << "]" << mem[start] << ":" << mem[index] << std::endl;
       }
 
     }

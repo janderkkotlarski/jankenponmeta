@@ -31,6 +31,8 @@ public:
 
   void multi_fib(const unsigned amount);
 
+  void auto_fib();
+
   void rand_fib();
 
 
