@@ -8,7 +8,7 @@ class fibran
 private:
   const unsigned m_max { 999999991 };
 
-  const unsigned m_sub { 31 };
+  const unsigned m_sub { 17 };
 
   std::vector <unsigned> m_fib{ 0, 0, 0 };
 
