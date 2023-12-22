@@ -33,10 +33,6 @@ public:
 
   void auto_fib();
 
-  void rand_fib();
-
-
-
   unsigned get_rand();
 
   unsigned get_val();
