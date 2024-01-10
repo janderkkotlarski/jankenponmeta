@@ -3,6 +3,8 @@
 
 #include "jankenpon.h"
 
+#include <vector>
+
 class player
 {
 private:

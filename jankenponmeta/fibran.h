@@ -25,8 +25,6 @@ private:
 public:
   fibran();
 
-
-
   void single_fib();
 
   void multi_fib(const unsigned amount);
@@ -39,7 +37,7 @@ public:
 
   std::vector <unsigned> get_memory();
 
-  void show_fib();
+  void show_val();
 
   void div_mem(const unsigned divi);
 
@@ -56,7 +54,5 @@ unsigned chronumber(const unsigned max);
 void mem_show(const std::vector <unsigned> &memory);
 
 void mem_show(const std::vector <unsigned> &memory, const unsigned length);
-
-std::vector <unsigned> unrests(const std::vector <unsigned> &memory, const unsigned div);
 
 #endif // FIBRAN_H
