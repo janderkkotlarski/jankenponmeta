@@ -115,12 +115,16 @@ sign5 number2sign(unsigned number) {
 }
 
 sign5 random_sign3(fibran &fibi) {
+  fibi.auto_fib();
+
   const unsigned number = fibi.get_val() % 3;
 
   return number2sign(number);
 }
 
 sign5 random_sign5(fibran &fibi) {
+  fibi.auto_fib();
+
   const unsigned number = fibi.get_val() % 5;
 
   return number2sign(number);
