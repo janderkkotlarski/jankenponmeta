@@ -38,7 +38,7 @@ void player::show_sign() const {
 }
 
 void player::show_score() const {
-  std::cout << m_score << std::endl;
+  std::cout << m_score;
 }
 
 void player::add_score(const int result) {
@@ -49,6 +49,7 @@ void player::add_score(const int result) {
 void show_player_signs(const std::vector <player> &players) {
   for (const player &joker: players) {
     joker.show_sign();
+    std::cout << " ";
   }
 
   std::cout << std::endl;
@@ -57,6 +58,7 @@ void show_player_signs(const std::vector <player> &players) {
 void show_player_scores(const std::vector <player> &players) {
   for (const player &joker: players) {
     joker.show_score();
+    std::cout << " ";
   }
 
   std::cout << std::endl;

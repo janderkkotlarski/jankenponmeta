@@ -29,6 +29,16 @@ int main(void)
 
 
   show_player_signs(jesters);
+  show_player_scores(jesters);
+
+  const unsigned rounds{256};
+
+  for (unsigned count {0}; count < rounds; ++count) {
+    round(jesters);
+  }
+
+  show_player_signs(jesters);
+  show_player_scores(jesters);
 
   return 0;
 }
