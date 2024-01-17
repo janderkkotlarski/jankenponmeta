@@ -106,8 +106,10 @@ void round(std::vector <player> &clowns) {
   }
 }
 
+/*
 void tourney(std::vector <player> &clowns, const int rounds) {
   for (int i { 0 }; i < rounds; ++i) {
     round(clowns);
   }
 }
+*/

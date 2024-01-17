@@ -5,8 +5,7 @@
 
 #include <vector>
 
-class player
-{
+class player {
 private:
   sign5 m_sign{ sign5::none };
   int m_score{ 0 };
@@ -41,6 +40,6 @@ void match(player &player_a, player &player_b);
 
 void round(std::vector <player> &clowns);
 
-void tourney(std::vector <player> &clowns, const int rounds);
+// void tourney(std::vector <player> &clowns, const int rounds);
 
 #endif // PLAYER_H

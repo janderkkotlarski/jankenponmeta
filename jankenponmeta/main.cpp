@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include "jankenpon.h"
 #include "player.h"
+#include "tourney.h"
 
 #include <iostream>
 
@@ -14,7 +15,11 @@ int main(void)
 
   player joker(fibi, true);
 
-  display_sign(joker.get_sign());
+  // display_sign(joker.get_sign());
+
+  // tourney tournament(fibi);
+
+  tourney tour(fibi);
 
   return 0;
 }

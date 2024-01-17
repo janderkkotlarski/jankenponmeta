@@ -6,10 +6,9 @@
 
 #include <vector>
 
-class tourney
-{
+class tourney {
 private:
-  const bool five { false };
+  const bool m_five { false };
 
   unsigned m_rounds { 4 };
 
@@ -19,7 +18,7 @@ private:
 public:
   tourney(fibran &fibi);
 
-
+  void show_players();
 
 };
 
