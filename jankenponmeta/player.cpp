@@ -11,14 +11,8 @@ player::player(const sign5 sign)
 {
 }
 
-player::player(fibran &fibi, const bool five)
-{
-  if (five) {
-    m_sign = random_sign5(fibi);
-  }
-  else {
-    m_sign = random_sign3(fibi);
-  }
+player::player(fibran &fibi, const bool five) {
+  m_sign = random_sign(fibi, five);
 }
 
 sign5 player::get_sign() {

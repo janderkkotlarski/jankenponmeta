@@ -114,6 +114,16 @@ sign5 number2sign(unsigned number) {
   }
 }
 
+sign5 random_sign(fibran &fibi, const bool five) {
+  fibi.auto_fib();
+
+  const unsigned divi = (five) ? 5 : 3;
+
+  const unsigned number = fibi.get_val() % divi;
+
+  return number2sign(number);
+}
+
 sign5 random_sign3(fibran &fibi) {
   fibi.auto_fib();
 

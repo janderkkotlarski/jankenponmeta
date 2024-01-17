@@ -32,13 +32,17 @@ LIBS += -static -lpthread
 
 SOURCES += \
         fibran.cpp \
+        functions.cpp \
         graphics.cpp \
         jankenpon.cpp \
         main.cpp \
-        player.cpp
+        player.cpp \
+        tourney.cpp
 
 HEADERS += \
   fibran.h \
+  functions.h \
   graphics.h \
   jankenpon.h \
-  player.h
+  player.h \
+  tourney.h

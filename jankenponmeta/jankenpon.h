@@ -16,7 +16,10 @@ void display_sign(const sign5 sign);
 
 void display_signs(const std::vector <sign5> &signs);
 
+sign5 random_sign(fibran &fibi, const bool five);
+
 sign5 random_sign3(fibran &fibi);
 sign5 random_sign5(fibran &fibi);
+
 
 #endif // JANKENPON_H
