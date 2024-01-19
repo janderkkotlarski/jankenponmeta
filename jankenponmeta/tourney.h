@@ -18,8 +18,11 @@ private:
 public:
   tourney(fibran &fibi);
 
-  void show_players();
+  void show_player_signs();
 
+  void show_player_scores();
+
+  void round();
 };
 
 #endif // TOURNEY_H

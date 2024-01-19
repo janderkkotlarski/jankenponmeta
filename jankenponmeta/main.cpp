@@ -11,15 +11,18 @@ int main(void)
 
   fibran fibi;
 
-  std::cout << power(3, 4) << std::endl;
+  // std::cout << power(3, 4) << std::endl;
 
-  player joker(fibi, true);
+  // player joker(fibi, true);
 
   // display_sign(joker.get_sign());
 
   // tourney tournament(fibi);
 
   tourney tour(fibi);
+
+  tour.show_player_signs();
+  tour.show_player_scores();
 
   return 0;
 }
