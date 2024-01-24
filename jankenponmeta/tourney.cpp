@@ -41,3 +41,24 @@ void tourney::round() {
     index += 2;
   }
 }
+
+void tourney::bracket() {
+  for (unsigned i { 0 }; i < m_players.size() - 1;  ++i) {
+    for (unsigned j { i + 1 }; j < m_players.size();  ++j) {
+      if (m_players[j].get_score() > m_players[i].get_score()) {
+        const player joker = m_players[i];
+
+        m_players[i] = m_players[j];
+        m_players[j] = joker;
+      }
+    }
+  }
+}
+
+
+void tourney::tournament() {
+  for (unsigned i { 0 }; i < m_rounds; ++i) {
+    round();
+    bracket();
+  }
+}

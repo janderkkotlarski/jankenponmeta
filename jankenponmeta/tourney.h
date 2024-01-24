@@ -10,7 +10,7 @@ class tourney {
 private:
   const bool m_five { false };
 
-  unsigned m_rounds { 4 };
+  const unsigned m_rounds { 4 };
 
   unsigned m_places { power(2, m_rounds) };
 
@@ -23,6 +23,10 @@ public:
   void show_player_scores();
 
   void round();
+
+  void bracket();
+
+  void tournament();
 };
 
 #endif // TOURNEY_H
