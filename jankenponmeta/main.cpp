@@ -23,6 +23,8 @@ int main(void)
 
   tour.show_player_signs();
   tour.show_player_scores();
+  tour.round();
+  tour.show_player_scores();
 
   return 0;
 }

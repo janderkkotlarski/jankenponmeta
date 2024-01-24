@@ -32,6 +32,12 @@ void tourney::round() {
   unsigned index { 0 };
 
   while (index < m_players.size()) {
+    // std::cout << index << std::endl;
+
+    if (index + 1 < m_players.size()){
+      match(m_players[index], m_players[index + 1]);
+    }
+
     index += 2;
   }
 }
