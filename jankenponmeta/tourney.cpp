@@ -62,3 +62,9 @@ void tourney::tournament() {
     bracket();
   }
 }
+
+void tournament_cycle(std::vector <tourney> &tours) {
+  for (tourney &tour: tours) {
+    tour.tournament();
+  }
+}
