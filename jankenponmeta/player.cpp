@@ -15,6 +15,13 @@ player::player(fibran &fibi, const bool five) {
   m_sign = random_sign(fibi, five);
 }
 
+player::player(fibran &fibi, const bool five, unsigned &ident)
+  : m_ident(ident)
+{
+  m_sign = random_sign(fibi, five);
+  ++ident;
+}
+
 sign5 player::get_sign() {
   return m_sign;
 }
@@ -31,6 +38,13 @@ void player::show_sign() const {
   display_sign(m_sign);
 }
 
+void player::show_ident() const {
+  if (m_ident > 0) {
+    std::cout << m_ident;
+  }
+}
+
+
 void player::show_score() const {
   std::cout << m_score;
 }
@@ -43,6 +57,7 @@ void player::add_score(const int result) {
 void show_player_signs(const std::vector <player> &players) {
   for (const player &joker: players) {
     joker.show_sign();
+    joker.show_ident();
     std::cout << " ";
   }
 

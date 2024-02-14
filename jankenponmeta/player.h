@@ -9,7 +9,7 @@ class player {
 private:
 
   sign5 m_sign{ sign5::none };
-  const unsigned m_ident{ 0 };
+  unsigned m_ident{ 0 };
   int m_score{ 0 };
   unsigned m_round{ 0 };
   bool m_five{ false };
@@ -30,6 +30,8 @@ public:
   int get_round();
 
   void show_sign() const;
+
+  void show_ident() const;
 
   void show_score() const;
 

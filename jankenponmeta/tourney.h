@@ -20,6 +20,8 @@ public:
 
   tourney(fibran &fibi, const bool five);
 
+  tourney(fibran &fibi, const bool five, unsigned &ident);
+
   void show_player_signs();
 
   void show_player_scores();

@@ -19,9 +19,11 @@ int main(void)
 
   // tourney tournament(fibi);
 
+  unsigned ident{ 1 };
+
   const bool five{ false };
 
-  tourney tour(fibi, five);
+  tourney tour(fibi, five, ident);
 
   tour.show_player_signs();
   tour.show_player_scores();
