@@ -19,7 +19,9 @@ int main(void)
 
   // tourney tournament(fibi);
 
-  tourney tour(fibi);
+  const bool five{ false };
+
+  tourney tour(fibi, five);
 
   tour.show_player_signs();
   tour.show_player_scores();

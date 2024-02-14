@@ -18,6 +18,8 @@ private:
 public:
   tourney(fibran &fibi);
 
+  tourney(fibran &fibi, const bool five);
+
   void show_player_signs();
 
   void show_player_scores();
@@ -28,5 +30,7 @@ public:
 
   void tournament();
 };
+
+void tournament_cycle(std::vector <tourney> &tours);
 
 #endif // TOURNEY_H

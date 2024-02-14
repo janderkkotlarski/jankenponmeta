@@ -7,9 +7,11 @@
 
 class player {
 private:
+
   sign5 m_sign{ sign5::none };
+  const unsigned m_ident{ 0 };
   int m_score{ 0 };
-  int m_round{ 0 };
+  unsigned m_round{ 0 };
   bool m_five{ false };
 
 public:
@@ -18,6 +20,8 @@ public:
   player(const sign5 sign);
 
   player(fibran &fibi, const bool five);
+
+  player(fibran &fibi, const bool five, unsigned &ident);
 
   sign5 get_sign();
 
