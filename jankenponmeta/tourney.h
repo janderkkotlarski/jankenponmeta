@@ -38,4 +38,10 @@ std::vector <tourney> generate_tourneys(fibran &fibi, const bool five,
 
 void tourneys_tournament(std::vector <tourney> &tours);
 
+void tourneys_scores(std::vector <tourney> &tours);
+
+void tourneys_signs(std::vector <tourney> &tours);
+
+void tourneys_displays(std::vector <tourney> &tours);
+
 #endif // TOURNEY_H

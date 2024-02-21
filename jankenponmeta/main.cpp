@@ -23,6 +23,8 @@ int main(void)
 
   const bool five{ false };
 
+  /*
+
   tourney tour(fibi, five, ident);
 
   tour.show_player_signs();
@@ -30,6 +32,14 @@ int main(void)
   tour.tournament();
   tour.show_player_signs();
   tour.show_player_scores();
+
+  */
+
+  std::vector <tourney> tours { generate_tourneys(fibi, five, ident, 3) };
+
+  tourneys_displays(tours);
+  tourneys_tournament(tours);
+  tourneys_displays(tours);
 
   return 0;
 }

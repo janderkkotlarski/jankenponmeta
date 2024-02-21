@@ -80,17 +80,39 @@ void tourney::tournament() {
   }
 }
 
-void tournament_cycle(std::vector <tourney> &tours) {
+std::vector <tourney> generate_tourneys(fibran &fibi, const bool five,
+                                        unsigned &ident, const unsigned amount) {
+  std::vector <tourney> tours;
+
+  for (unsigned count { 0 }; count < amount; ++count) {
+    tourney tour(fibi, five, ident);
+    tours.push_back(tour);
+  }
+
+  return tours;
+}
+
+void tourneys_tournament(std::vector <tourney> &tours) {
   for (tourney &tour: tours) {
     tour.tournament();
   }
 }
 
-std::vector <tourney> generate_tourneys(const unsigned amount) {
-  std::vector <tourney> tours;
+void tourneys_scores(std::vector <tourney> &tours) {
+  for (tourney &tour: tours) {
+    tour.show_player_scores();
+  }
+}
 
-  for (unsigned count { 0 }; count < amount; ++count) {
-    tourney tour(fibi, five, ident);
-    tours.push_back();
+void tourneys_signs(std::vector <tourney> &tours) {
+  for (tourney &tour: tours) {
+    tour.show_player_signs();
+  }
+}
+
+void tourneys_displays(std::vector <tourney> &tours) {
+  for (tourney &tour: tours) {
+    tour.show_player_signs();
+    tour.show_player_scores();
   }
 }
