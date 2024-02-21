@@ -33,6 +33,9 @@ public:
   void tournament();
 };
 
-void tournament_cycle(std::vector <tourney> &tours);
+std::vector <tourney> generate_tourneys(fibran &fibi, const bool five,
+                                        unsigned &ident, const unsigned amount);
+
+void tourneys_tournament(std::vector <tourney> &tours);
 
 #endif // TOURNEY_H

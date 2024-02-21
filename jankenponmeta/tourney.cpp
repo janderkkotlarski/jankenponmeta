@@ -85,3 +85,12 @@ void tournament_cycle(std::vector <tourney> &tours) {
     tour.tournament();
   }
 }
+
+std::vector <tourney> generate_tourneys(const unsigned amount) {
+  std::vector <tourney> tours;
+
+  for (unsigned count { 0 }; count < amount; ++count) {
+    tourney tour(fibi, five, ident);
+    tours.push_back();
+  }
+}
